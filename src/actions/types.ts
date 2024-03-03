@@ -5,3 +5,10 @@ export interface CreateTopicFormState {
     _form?: string[];
   };
 }
+export interface CreatePostFormState {
+  errors: {
+    title?: string[];
+    content?: string[];
+    _form?: string[];
+  };
+}

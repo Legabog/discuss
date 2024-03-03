@@ -8,7 +8,7 @@ const paths = {
     return {
       show: `${root}${topicSlug}`,
       edit: `${root}${topicSlug}/posts/new`,
-      delete: `${root}${topicSlug}/posts/${postId}`,
+      'post-show': `${root}${topicSlug}/posts/${postId}`,
     }
   },
 }

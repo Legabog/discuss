@@ -1,4 +1,6 @@
-import { TopicCreateForm } from "@/components";
+import { Card, CardBody, CardHeader, Divider } from "@nextui-org/react";
+
+import { TopicCreateForm, TopicList } from "@/components";
 
 const Home = () => {
   return (
@@ -7,7 +9,14 @@ const Home = () => {
         <h1 className="text-xl m-2">Top Posts</h1>
       </div>
       <div>
-        <TopicCreateForm />
+        <Card className="py-4">
+          <CardHeader className="block overflow-visible py-2">
+            <TopicList />
+          </CardHeader>
+          <CardBody className="pb-0 justify-end">
+            <TopicCreateForm />
+          </CardBody>
+        </Card>
       </div>
     </div>
   );
