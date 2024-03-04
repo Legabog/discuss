@@ -12,3 +12,10 @@ export interface CreatePostFormState {
     _form?: string[];
   };
 }
+export interface CreateCommentFormState {
+  errors: {
+    content?: string[];
+    _form?: string[];
+  };
+  success?: boolean;
+}
