@@ -1,8 +1,7 @@
-import { FC } from "react";
+import { FC, Suspense } from "react";
 import Link from "next/link";
 
-import { fetchCommentsByPostId } from "@/db/queries";
-import {CommentCreateForm, PostShow, CommentList} from "@/components";
+import {CommentCreateForm, PostShow, CommentList, PostShowLoading} from "@/components";
 import paths from "@/path";
 import { Props } from "./types";
 
@@ -14,7 +13,9 @@ const PostShowPage: FC<Props> = ({ params }) => {
       <Link className="underline decoration-solid" href={paths.topic(slug).show}>
         {"< "}Back to {slug}
       </Link>
+      <Suspense fallback={<PostShowLoading/>}>
       <PostShow postId={postId} />
+      </Suspense>
       <CommentCreateForm postId={postId} startOpen />
       <CommentList postId={postId} />
     </div>

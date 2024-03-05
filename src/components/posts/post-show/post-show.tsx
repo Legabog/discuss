@@ -5,6 +5,8 @@ import { db } from "@/db";
 import { notFound } from "next/navigation";
 
 export const PostShow: FC<Props> = async ({ postId }) => {
+  await new Promise(resolve => setTimeout(resolve, 2500));
+
   const post = await db.post.findFirst({ where: { id: postId } });
   const { title, content } = post || {};
 

@@ -5,3 +5,4 @@ export * from "./topics";
 export * from "./common";
 export * from "./posts";
 export * from './comments';
+export * from './search-input'

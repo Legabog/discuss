@@ -166,3 +166,10 @@ export const createComment = async ({ postId, parentId }: { postId: string; pare
     errors.success = true;
     return errors
 };
+export const search = async (formData: FormData) => {
+  const term = formData.get('term')
+
+  if (typeof term !=='string' || !term) redirect('/')
+
+  redirect(`/search?term=${term}`)
+}
