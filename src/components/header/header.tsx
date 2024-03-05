@@ -1,17 +1,15 @@
-import { FC } from "react";
+import { FC, Suspense } from "react";
 import Link from "next/link";
 import {
   Navbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  Input,
 } from "@nextui-org/react";
 
-import { HeaderAuth } from "@/components";
+import { HeaderAuth, SearchInput } from "@/components";
 
 export const Header: FC = () => {
-
   return (
     <Navbar className="shadow mb-6">
       <NavbarBrand>
@@ -21,10 +19,14 @@ export const Header: FC = () => {
       </NavbarBrand>
       <NavbarContent justify="center">
         <NavbarItem>
-          <Input></Input>
+          <Suspense>
+            <SearchInput />
+          </Suspense>
         </NavbarItem>
       </NavbarContent>
-      <NavbarContent justify="end"><HeaderAuth/></NavbarContent>
+      <NavbarContent justify="end">
+        <HeaderAuth />
+      </NavbarContent>
     </Navbar>
   );
 };
